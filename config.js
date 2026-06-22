@@ -6,7 +6,7 @@
 window.AUTOPOST_CONFIG = {
   // Base URL of your n8n instance (no trailing slash).
   // Example: "https://n8n.yourdomain.com"
-  N8N_BASE_URL: "https://YOUR-N8N-HOST",
+  N8N_BASE_URL: "https://alexmess.app.n8n.cloud",
 
   // Webhook PATHS you create inside n8n (Webhook node "Path" field).
   // The front end POSTs to N8N_BASE_URL + the path below.
