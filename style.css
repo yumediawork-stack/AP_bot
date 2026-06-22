@@ -1,0 +1,129 @@
+/* ============================================================
+   AutoPost Telegram Mini-App — style.css
+   Palette: #000000 (black), #ffffff (white), #9B111E (accent)
+   Mobile-first, minimalist, crisp typography.
+   ============================================================ */
+
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --accent: #9B111E;
+  --accent-soft: rgba(155, 17, 30, 0.12);
+  --grey-900: #0c0c0d;
+  --grey-800: #161618;
+  --grey-700: #232327;
+  --grey-500: #6b6b73;
+  --grey-300: #c9c9d1;
+  --grey-100: #f4f4f6;
+  --radius: 14px;
+  --radius-sm: 10px;
+  --gap: 16px;
+  --accent-gradient: linear-gradient(135deg, #9B111E 0%, #5e0a12 100%);
+  --shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+  --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+html, body {
+  height: 100%;
+  background: var(--white);
+  color: var(--black);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.hidden { display: none !important; }
+
+/* ---------- Telegram gate ---------- */
+.gate { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: var(--black); color: var(--white); padding: 24px; z-index: 100; }
+.gate-card { max-width: 360px; text-align: center; }
+.gate-logo { font-weight: 800; letter-spacing: 1px; font-size: 14px; text-transform: uppercase; color: var(--accent); margin-bottom: 28px; }
+.gate-icon { color: var(--accent); margin-bottom: 18px; }
+.gate-card h1 { font-size: 24px; font-weight: 700; margin-bottom: 12px; }
+.gate-card p { color: var(--grey-300); font-size: 15px; }
+
+/* ---------- App shell ---------- */
+.app { display: flex; flex-direction: column; min-height: 100%; max-width: 520px; margin: 0 auto; }
+.topbar { position: sticky; top: 0; z-index: 30; display: flex; align-items: center; gap: 8px; padding: 14px 16px; background: var(--black); color: var(--white); border-bottom: 1px solid var(--grey-800); }
+.brand { flex: 1; text-align: center; font-weight: 800; font-size: 18px; letter-spacing: 0.5px; }
+.brand span { color: var(--accent); }
+.icon-btn { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: transparent; color: var(--white); border: none; cursor: pointer; transition: background 0.15s ease; }
+.icon-btn:active { background: var(--grey-800); }
+.user-strip { font-size: 13px; color: var(--grey-500); padding: 8px 16px; background: var(--grey-100); border-bottom: 1px solid #e7e7ec; }
+.user-strip b { color: var(--black); }
+.view { flex: 1; padding: 20px 16px 40px; }
+
+/* ---------- Typography helpers ---------- */
+.page-title { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
+.page-sub { color: var(--grey-500); font-size: 14px; margin-bottom: 20px; }
+.section-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); margin: 22px 0 10px; }
+
+/* ---------- Buttons ---------- */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 15px 18px; border: none; cursor: pointer; border-radius: var(--radius); font-size: 16px; font-weight: 600; transition: transform 0.08s ease, opacity 0.15s ease; }
+.btn:active { transform: scale(0.98); }
+.btn-primary { background: var(--accent-gradient); color: var(--white); box-shadow: var(--shadow); }
+.btn-dark { background: var(--black); color: var(--white); }
+.btn-ghost { background: var(--white); color: var(--black); border: 1.5px solid var(--grey-300); }
+.btn-row { display: flex; gap: 12px; }
+.btn-row .btn { flex: 1; }
+
+/* ---------- Cards ---------- */
+.card { background: var(--white); border: 1px solid #ececf1; border-radius: var(--radius); padding: 16px; margin-bottom: 14px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.case-card { display: flex; align-items: center; gap: 14px; cursor: pointer; }
+.case-badge { flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; background: var(--accent-soft); color: var(--accent); }
+.case-badge.ig { background: rgba(0,0,0,0.06); color: var(--black); }
+.case-info { flex: 1; min-width: 0; }
+.case-info h3 { font-size: 16px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.case-info p { font-size: 13px; color: var(--grey-500); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.case-pill { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 3px 9px; border-radius: 20px; background: var(--accent-soft); color: var(--accent); }
+.case-pill.ig { background: rgba(0,0,0,0.07); color: var(--black); }
+.empty { text-align: center; color: var(--grey-500); padding: 48px 20px; }
+.empty svg { color: var(--grey-300); margin-bottom: 12px; }
+
+/* ---------- Forms ---------- */
+.field { margin-bottom: 18px; }
+.field label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 7px; }
+.field .hint { font-size: 12px; color: var(--grey-500); margin-top: 5px; }
+.field input, .field select, .field textarea { width: 100%; padding: 13px 14px; font-size: 15px; font-family: var(--font); border: 1.5px solid var(--grey-300); border-radius: var(--radius-sm); background: var(--white); color: var(--black); transition: border-color 0.15s ease; }
+.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--accent); }
+.field textarea { min-height: 120px; resize: vertical; }
+.guide-link { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: var(--accent); background: none; border: none; cursor: pointer; margin-top: 6px; padding: 0; }
+
+/* ---------- Platform slider ---------- */
+.slider { display: flex; background: var(--grey-100); border-radius: var(--radius); padding: 4px; position: relative; margin-bottom: 20px; }
+.slider button { flex: 1; padding: 11px 0; border: none; background: transparent; cursor: pointer; font-size: 14px; font-weight: 600; color: var(--grey-500); border-radius: var(--radius-sm); z-index: 2; transition: color 0.2s ease; }
+.slider button.active { color: var(--white); }
+.slider .thumb { position: absolute; top: 4px; bottom: 4px; left: 4px; width: calc(50% - 4px); background: var(--accent-gradient); border-radius: var(--radius-sm); transition: transform 0.25s cubic-bezier(.4,0,.2,1); z-index: 1; }
+.slider.ig .thumb { transform: translateX(100%); background: linear-gradient(135deg,#000,#3a3a3a); }
+
+/* ---------- List head ---------- */
+.list-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+.list-head .page-title { margin: 0; }
+
+/* ---------- Loader & toast ---------- */
+.loader { position: fixed; inset: 0; background: rgba(255,255,255,0.7); display: flex; align-items: center; justify-content: center; z-index: 80; }
+.spinner { width: 38px; height: 38px; border: 3px solid var(--grey-300); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.toast { position: fixed; left: 50%; bottom: 28px; transform: translateX(-50%) translateY(20px); background: var(--black); color: var(--white); padding: 12px 20px; border-radius: 30px; font-size: 14px; font-weight: 500; opacity: 0; pointer-events: none; z-index: 90; transition: opacity 0.25s ease, transform 0.25s ease; max-width: 90%; }
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+.toast.error { background: var(--accent); }
+
+/* ---------- Submitted posts ---------- */
+.post-item { border-left: 3px solid var(--accent); padding: 12px 14px; }
+.post-item .meta { font-size: 12px; color: var(--grey-500); margin-top: 6px; display: flex; gap: 12px; flex-wrap: wrap; }
+.post-item .meta span { display: inline-flex; align-items: center; gap: 4px; }
+
+/* ---------- Home tiles ---------- */
+.tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 8px; }
+.tile { background: var(--black); color: var(--white); border-radius: var(--radius); padding: 18px; cursor: pointer; transition: transform 0.08s ease; }
+.tile:active { transform: scale(0.98); }
+.tile.accent { background: var(--accent-gradient); }
+.tile .tile-num { font-size: 28px; font-weight: 800; }
+.tile .tile-label { font-size: 13px; opacity: 0.85; margin-top: 2px; }
+.tile svg { margin-bottom: 8px; opacity: 0.9; }
+
+@media (min-width: 560px) { .view { padding: 28px 24px 48px; } }
